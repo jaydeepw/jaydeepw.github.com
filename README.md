@@ -1,4 +1,4 @@
 jaydeepw.github.com
 ===================
 
-My site
+List of all the talks and workshops I have undertaken on behalf of Pune GDG or TechNext

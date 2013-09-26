@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">MovieFinderCheatsheet</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_movie_search">MovieSearch</string>
+
+</resources>

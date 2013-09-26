@@ -1,0 +1,29 @@
+#chrome-heart {
+display: inline-block;
+margin-bottom: -30px;
+background: url(../images/chrome_logo.png) 50% 50% no-repeat;
+width: 100px;
+height: 100px;
+background-position: 50% 50%;
+background-size: cover;
+}
+
+.spin {
+-webkit-animation-name: rotateRight;
+-webkit-animation-duration: 10s;
+-webkit-animation-timing-function: linear;
+-webkit-transform-origin: 50% 50%;
+-webkit-animation-iteration-count: infinite;
+}
+.spin:hover {
+-webkit-animation-duration: 0.1s;
+}
+
+@-webkit-keyframes rotateRight {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

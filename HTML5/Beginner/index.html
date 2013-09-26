@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5, the Web & the Mobile</title>
+
+	<script type="text/javascript" src="js/canvas-animation.js"></script>
+	<script type="text/javascript" src="js/request-animation.js"></script>
+	<script type="text/javascript" src="js/local-storage.js"></script>
+	<script type="text/javascript" src="js/session-storage.js"></script>
+    <!-- Linking styles -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/mystyle.css" type="text/css" media="all" />
+	
+		<style>
+			.css-transition{
+				transition:width 1s;
+				-moz-transition:width 1s; /* Firefox 4 */
+				-webkit-transition:width 1s; /* Safari and Chrome */
+				background-color:lightblue; width:250px; height:130px;
+				line-height20px;
+				font-weight: bold;  margin:0px auto 0px auto;
+			}
+			
+			#div-transition:hover{
+				width: 400px;
+			}
+			
+			@keyframes myfirst
+			{
+				from {background: red;
+				width: 100px;
+				border-radius:0px;}
+				to {background: yellow;
+				width: 400px;
+				border-radius:30px;}
+			}
+			
+			@-moz-keyframes myfirst /* Firefox */
+			{
+				from {background: red;
+					width: 100px;
+					-moz-border-radius:0px;}
+				to {background: yellow;
+					width: 400px;
+					-moz-border-radius:30px;}
+			}
+			
+			@-webkit-keyframes myfirst /* Safari and Chrome */
+			{
+				from {background: red;
+				width: 100px;
+				-webkit-border-radius:0px;}
+				to {background: yellow;
+				width: 400px;
+				-webkit-border-radius:30px;}
+			}
+			
+			#div-animation:hover
+			{
+			animation: myfirst 5s;
+			-moz-animation: myfirst 5s; /* Firefox */
+			-webkit-animation: myfirst 5s; /* Safari and Chrome */
+			}
+			
+			.css-animation{
+				background-color:lightblue; width:250px; height:130px;
+				font-weight: bold;  margin:0px auto 0px auto;
+			}
+			
+			#text-shadow{
+				text-shadow: 5px 5px 5px #FF0000;
+			}
+
+		</style>
+</head>
+<body>
+
+    <nav id="helpers"><!-- Defining the floating helpers of the page -->
+      <!--<button title="Previous" id="nav-prev" class="nav-prev">&lt;-</button> 
+      <button title="Jump to slide" id="slide-no">3</button> 
+      <button title="Next" id="nav-next" class="nav-next">-&gt;</button>-->
+      <menu>
+        <!--<button type="checkbox" data-command="notes" title="View Notes">Notes</button>
+        <button type="checkbox" data-command="help" title="View Help">Help</button>
+        <button type="checkbox" data-command="back" title="Back to tutorial">Back</button>-->
+	<a href="http://www.theintouchid.com/" target="_blank" style="text-decoration:none; display:inline;">
+		<img src="images/intouchid-logo-05-small-130x25.png"/>
+	</a>
+      </menu>
+    </nav>
+
+    <div class="presentation"><!-- Defining the main presentation -->
+      <div id="presentation-counter">Loading...</div>
+
+      <div class="slides"><!-- Defining slides -->
+
+        <div class="slide" id="slide1"><!-- Defining single slide -->
+          <section class="middle">
+            <p style="font-size: 40px; font-weight:bold;">HTML5, the Web & the Mobile</p>
+	    <div>
+		
+	    </div>
+	    <div>
+		<p style="font-size:25px;">Press <span id="left-init-key" class="key">&rarr;</span> key to continue.</p>
+	    </div>
+          </section>
+          <aside class="note"><!-- hidden notes of slide -->
+            <section>
+              
+            </section>
+          </aside> 
+        </div>
+	
+	<div class="slide" id="slide2">
+          <section class="middle">
+		<div style="float:none; font-size: 25px;">
+			Who am I?
+		</div>
+	     <div style="float:left; text-align:left; margin:15px;">
+		<ul>
+			<li style="font-size:20px; line-height: 0px;">
+				<a href="http://www.the4thdimension.net/" target="_blank">
+					Blog: The4thDimension.net
+				</a>				
+			</li>
+			<li style="font-size:20px; line-height: 0px;">
+				<a href="http://thecontactid.com/add/2010-11111111/" target="_blank">
+					IntouchId: *2010-1111-1111
+				</a>				
+			</li>
+		</ul>
+	    </div>
+          </section>
+        </div>
+	
+<!--
+        <div class="slide" id="slide2">
+          <header>Slides controls</header>
+          <section>
+            <ul>
+              <li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move forward/back.</li>
+              <li><span class="key">spacebar</span> to move forward.</li>
+              <li><span class="key">N</span> to toggle hidden notes.</li>
+              <li><span class="key">H</span> to toggle help.</li>
+            </ul>
+          </section>
+          <aside class="note">
+            <section>
+              Notes for second slide
+            </section>
+          </aside> 
+        </div>
+-->
+        <div class="slide" id="slide3">
+          <section class="middle">
+            <hgroup>
+             
+              <h2>What is HTML5?</h2>
+		<h3>
+		      HTML5 = HTML + CSS3 + Javascript
+		</h3>
+            </hgroup>
+          </section>
+        </div>
+
+        <div class="slide" id="slide4">
+          <section class="middle">
+            <hgroup>
+              <h2>
+                CSS3
+              </h2>
+             <div style="float:left; text-align:left; margin:15px; line-height: 26px;">
+		<ul>
+		    <li>Border Radius</li>
+		    <li>Transitions</li>
+		    <li>Animation</li>
+		    <li>Media Queries</li>
+		    <li>Text Shadow</li>
+		</ul>
+	     </div>
+            </hgroup>
+           
+          </section>
+        </div>
+
+        <div class="slide" id="slide5">
+          <section class="middle">
+              <h2>
+                 Border Radius
+              </h2>
+              <div style="line-height20px;
+		font-weight: bold;border-radius:10px; -webkit-border-radius:10px; background-color:lightblue; width:250px; height:130px; margin:0px auto 0px auto;">
+		border-radius
+	      </div>
+		<div style="font-size: 12px;">
+			Syntax: border-radius: &lt;X px &gt;;
+		</div>
+           
+          </section>
+        </div>
+		
+	<div class="slide" id="slide6">
+          <section class="middle">
+               <h2>
+                 Transition
+              </h2>
+		<div id="div-transition" class="css-transition">
+			mouse hover
+		</div>
+		<div style="font-size: 12px;">
+			Syntax: transition: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transition-timing-function&gt; &lt;transition-delay&gt;;
+		</div>
+             
+          </section>
+        </div>
+	
+	<div class="slide" id="slide7">
+          <section class="middle">
+               <h2>
+                 Animation
+              </h2>
+		<div id="div-animation" class="css-animation">
+			mouse hover
+		</div>
+		<div style="font-size: 12px;">
+			Syntax: animation: &lt;animation-name&gt; &lt;transition-duration&gt; ;
+		</div>
+		<div>
+			<a href="http://css3.bradshawenterprises.com/transitions/" target="_blank">
+				More Demos?
+			</a>	
+		</div>
+             
+          </section>
+        </div>
+	
+	<div class="slide" id="slide8">
+          <section class="middle">
+               <h2>
+                 Media Queries
+              </h2>
+	       <img src="images/media-queries.jpg"/>
+		<div>
+			<a href="http://designmodo.com/responsive-design-examples/" target="_blank">
+				Goto Demo
+			</a>	
+		</div>
+             
+          </section>
+        </div>
+	
+	<div class="slide" id="slide9">
+          <section class="middle">
+               <h2>
+                 Text Shadow
+		</h2>
+		<div id="text-shadow" class="css-animation">
+			This text has shadow
+		</div>
+		<div style="font-size: 12px;">
+			Syntax: text-shadow: [X offset] [Y offset] [Blur size] [Colour];;
+		</div>
+             
+          </section>
+        </div>
+	
+	 <div class="slide" id="slide10">
+          <section class="middle">
+            <hgroup>
+              <h2>
+                HTML5 Tags
+              </h2>
+		<div style="float:left; text-align:left; margin:15px; line-height: 26px;">
+		   <ul>
+		       <li>nav tag</li>
+		       <li>figure tag</li>
+		       <li>article tag</li>
+		       <li>section tag</li>
+		       <li>Many more semantic tags</li>
+		   </ul>
+		</div>
+		<div style="float:right; text-align:left; margin:15px; line-height: 26px; width:340px; height:200px;">
+		   <img src="images/older-tags-vs-semantic-tags.png" width="340" height="200"/>
+		</div>
+		<div style="float:none;">
+			<a href="http://blogs.msdn.com/b/jennifer/archive/2011/08/01/html5-part-1-semantic-markup-and-page-layout.aspx" target="_blank">
+				Want more Tags?
+			</a>	
+		</div>
+            </hgroup>
+           
+          </section>
+        </div>
+	 
+	<div class="slide" id="slide11">
+          <section class="middle">
+            <hgroup>
+              <h2>
+                HTML5 video tag
+              </h2>
+	      	<div style="float:none; text-align:left; margin:0px auto 0px auto; line-height: 26px; font-size:14px; width:410px;">
+			&lt;video width="320" height="240" controls="controls"&gt;<br/>
+				&nbsp; &lt;source src="video/movie.mp4" type="video/mp4"/&gt;<br/>
+				&nbsp; &lt;source src="video/movie.ogg" type="video/ogg" /&gt;<br/>
+				&nbsp; Your browser does not support the video tag.<br/>
+			&lt;/video&gt;
+		</div>
+		 <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+			<video width="320" height="240" controls="controls">
+				<source src="video/movie.mp4" type="video/mp4"/>
+				<source src="video/movie.ogg" type="video/ogg" />
+				Your browser does not support the video tag.
+		        </video>
+		 </div>
+            </hgroup>
+           
+          </section>
+        </div>
+	
+	<div class="slide" id="slide12">
+          <section class="middle">
+            <hgroup>
+              <h2>
+                HTML5 audio tag
+              </h2>
+	      	<div style="float:none; text-align:left; margin:0px auto 0px auto; line-height: 26px; font-size:14px; width:410px;">
+			&lt;audio width="320" height="240" controls="controls"&gt;<br/>
+				&nbsp; &lt;source src="audio/movie.mp4" type="audio/mp4"/&gt;<br/>
+				&nbsp; &lt;source src="audio/movie.ogg" type="audio/ogg" /&gt;<br/>
+				&nbsp; Your browser does not support the audio tag.<br/>
+			&lt;/audio&gt;
+		</div>
+		 <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+			<audio controls="controls">
+				<source src="audio/song.ogg" type="audio/ogg" />
+				<source src="audio/song.mp3" type="audio/mp3" />
+				Your browser does not support the audio element.
+			      </audio>
+		 </div>
+            </hgroup>
+           
+          </section>
+        </div>
+	 
+	<div class="slide" id="slide13">
+          <section class="middle">
+            <hgroup>
+              <h2>
+                Javasctipt APIs
+              </h2>
+		<div style="float:left; text-align:left; margin:15px; line-height: 26px;">
+		   <ul>
+		       <li>Canvas API</li>
+		       <li>Request Animation Frame</li>
+		       <li>Local Storage</li>
+		       <li>Session Storage</li>
+		       <li>getUserMedia()</li>
+		   </ul>
+		</div>
+		<!--<div style="float:right; text-align:left; margin:15px; line-height: 26px; width:340px; height:200px;">
+		   <img src="images/older-tags-vs-semantic-tags.png" width="340" height="200"/>
+		</div>-->
+		<!--<div style="float:none;">
+			<a href="http://blogs.msdn.com/b/jennifer/archive/2011/08/01/html5-part-1-semantic-markup-and-page-layout.aspx" target="_blank">
+				Want more Tags?
+			</a>	
+		</div>-->
+            </hgroup>
+           
+          </section>
+        </div>
+	
+	<div class="slide" id="slide14">
+          <section class="middle">
+		<hgroup>
+		  <h2>
+		    Canvas API
+		  </h2>
+		</hgroup>
+	       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+		   <canvas id="canvas" width="290px" height="240px" style="border:1px solid black"></canvas>
+		    <div style=" margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+			<div style="margin: 0px auto 0px auto; width: 120px;">
+				<input type="button" onclick="startGame();" value="Start Animation" style="background: #667FCF; -webkit-border-radius: 3px; border-radius: 3px; color:#FFF;">
+				<br/>
+				<a href="https://chrome.google.com/webstore/detail/habhabojllgbbnkljehenoifphabnfdn" target="_blank">
+					1942 Tanks
+				</a>
+			</div>
+			
+		    </div>
+		    <div>
+			
+		    </div>
+		</div>
+	      
+          </section>
+        </div>
+	
+	<div class="slide" id="slide15">
+          <section class="middle">
+		<hgroup>
+		  <h2>
+		    Request Animation
+		  </h2>
+		</hgroup>
+	       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+		   <!--<canvas id="canvas" width="290px" height="240px" style="border:1px solid black"></canvas>-->
+		    <div style="margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+			<a href="http://paulirish.com/2011/requestanimationframe-for-smart-animating/" target="_blank">
+				Demo
+			</a>
+		    </div>
+		</div>
+	      
+          </section>
+        </div>
+	
+	<div class="slide" id="slide16">
+          <section class="middle">
+		<hgroup>
+		  <h2>
+		    Local Storage
+		  </h2>
+		</hgroup>
+	       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+			<table>
+				<tr>
+				  <td>Status</td>
+				  <td><div id="status">No key-value pair written yet</div></td>
+				</tr>
+				<tr>
+				  <td>Enter Key</td>
+				  <td><input type="text" id="key"></input>
+				</tr>
+				<tr>
+				  <td>Enter Value</td>
+				  <td><input type="text" id="value"></input>
+				</tr>
+				<tr>
+				  <td><button id="read" onClick="updateLocalStorageStatus('Read');">Read</button></td>
+				  <td><button id="write" onClick="updateLocalStorageStatus('Write');">Write</button></td>
+				</tr>
+			</table>
+		</div>
+	      
+          </section>
+        </div>
+	
+	<div class="slide" id="slide17">
+          <section class="middle">
+		<hgroup>
+		  <h2>
+		    Session Storage
+		  </h2>
+		</hgroup>
+	       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+			<table>
+				<tr>
+				  <td>Status</td>
+				  <td><div id="status1">No key-value pair written yet</div></td>
+				</tr>
+				<tr>
+				  <td>Enter Key</td>
+				  <td><input type="text" id="key1"></input>
+				</tr>
+				<tr>
+				  <td>Enter Value</td>
+				  <td><input type="text" id="value1"></input>
+				</tr>
+				<tr>
+				  <td><button id="read1" onClick="updateSessionStorageStatus('Read');">Read</button></td>
+				  <td><button id="write1" onClick="updateSessionStorageStatus('Write');">Write</button></td>
+				</tr>
+			</table>
+		</div>
+	      
+          </section>
+        </div>
+	
+	<div class="slide" id="slide18">
+          <section class="middle">
+		<hgroup>
+		  <h2>
+		    getUserMedia()
+		  </h2>
+		</hgroup>
+	       <div style="float:left; text-align:left; margin:15px; line-height: 26px;">
+			<ul>
+				<li>Really new API</li>
+				<li>Can be used for video streaming</li>
+				<li>Online Conference Applications</li>
+			</ul>
+		</div>
+	      
+          </section>
+        </div>
+		
+	<div class="slide" id="slide19">
+          <section class="middle">
+		<div id="chrome-heart" class="spin"></div>
+		<hgroup>
+		  <h2>
+		    Resources to learn
+		  </h2>
+		</hgroup>
+		<div style="float:none; text-align:left; margin:15px; line-height: 22px; width:450px;">
+			<ul>
+				<li style="padding:5px; width:450px; font-size:15px">
+					<div style="margin:15px; width:450px;">
+						<a href="http://HTML5ROCKS.com/" target="_blank">
+							HTML5ROCKS
+						</a>
+					    </div>
+				</li>
+				<li style="padding:5px; width:450px; font-size:15px">
+					<div style="margin:15px; 22px; width:290px;">
+						<a href="https://developer.mozilla.org/en/HTML/HTML5" target="_blank">
+							Mozilla Developer Network
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+           
+          </section>
+        </div>
+
+      </div>
+
+      <div id="hidden-note" class="invisible" style="display: none;">
+      </div> <!-- hidden note -->
+
+      <aside id="help" class="sidebar invisible" style="display: hidden;"><!-- Defining sidebar help -->
+        <table>
+          <caption>Help</caption>
+            <tr>
+              <th>Move forward/back</th>
+              <td>&larr;&nbsp;&rarr;</td>
+            </tr>
+            <tr>
+              <th>Move forward</th>
+              <td>spacebar</td>
+            </tr>
+            <tr>
+              <th>Hidden Notes</th>
+              <td>N</td>
+            </tr>
+            <tr>
+              <th>Help</th>
+              <td>H</td>
+            </tr>
+        </table>
+      </aside>
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

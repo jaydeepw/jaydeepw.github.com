@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>From an idea to Google Play</title>
+
+    <meta charset='utf-8'>
+    <script src="js/slides.js"></script>
+  </head>
+    <body style='display: none;'>
+
+    <section class='slides layout-regular template-default'>
+
+      <article>
+        <h1>From an idea to Google Play</h1>
+        <p>
+          <img class="" style='height: 250px;' src='images/android250.jpg'>
+        </p>
+      </article>
+
+       <article>
+        <article style="width:100%;">
+          <div style="width: 450px; margin: 0 auto 0 auto;">
+            <div style="margin: 0 10px 10px 0;">
+              <h4>
+                Who am I?
+              </h4>
+            </div>
+            <img class="rounded-corner-5 profile-pic" src="images/mypic.jpeg" />
+            <p>
+              Jaydeep Wagh
+              <br>
+              IntouchId: <a class="no-underline" href="http://theintouchid.com/add/JaydeepW/" target="_blank">JaydeepW</a><br/>
+              Twitter: <a class="no-underline" href="https://twitter.com/jaydeep_w" target="_blank">Jaydeep_w</a><br/>
+            </p>
+          </div>
+
+          <ul>
+            <li> Presentation: <a class="no-underline" href="http://jaydeepw.github.com/tech-talks/"> jaydeepw.github.com/tech-talks/ </a></li>
+            <li> Code Samples: <a class="no-underline" href="https://github.com/jaydeepw/tech-talks"> github.com/jaydeepw/tech-talks </a></li>
+            </ul>
+        </article>
+      </article>
+
+      <article>
+        <h1>
+          Agenda
+        </h1>
+        <ul>
+          <li> Before you start developing. </li>
+          <li> During development </li>
+          <li> Making it a minimal viable product. </li>
+          <li> Post development </li>
+          <li> Post deployment </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Pre development
+        </h1>
+        <ul>
+          <li> Market research </li>
+          <li> Package name </li>
+          <li> Native approach </li>
+          <li> HTML5(web based) approach </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Market research
+        </h1>
+        <ul>
+          <li> Take notes </li>
+          <li> Compare features </li>
+          <li> Read comments </li>
+          <li> last but huge, use similar apps </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Package name
+        </h1>
+        <ul>
+          <li> One time choice </li>
+          <li> Make sensible choice </li>
+          <li> Should reflect your company / website </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Native approach
+        </h1>
+        <ul>
+          <li> High speed, slow development </li>
+          <li> Android version </li>
+          <li> API level </li>
+          <li> Supported form factors </li>
+          <li> Use case: Contactbook </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          HTML5 approach
+        </h1>
+        <ul>
+          <li> Low speed, faster development </li>
+          <li> Native apps using frameworks </li>
+          <li> HTML5 apps using frameworks </li>
+          <li> Use case: Inventory tracker </li>
+        </ul>
+      </article>
+
+
+      <article>
+        <h1>
+          During development
+        </h1>
+        <ul>
+          <li> Taking care of ANRs and NPE. </li>
+          <li> Exception prone areas more failsafe </li>
+          <li> Remote error logging </li>
+          <li> Offline capabilities </li>
+          <li> Performance & Security </li>
+          <li> Best practices </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          ANRs and NPE
+        </h3>
+        <img src="images/anrs-npe.png" style="width: 700px; height: 500px;"/>
+      </article>
+
+      <article>
+        <h1>
+          Avoiding ANRs and NPE
+        </h1>
+        <ul>
+          <li> Respond to user within <strong>5 seconds</strong> </li>
+          <li> BroadCast Receiver must complete within <strong>10 seconds</strong> </li>
+          <li> Users perceive lag longer than 100-200ms </li>
+          <li> Use <strong>Threads</strong> and <strong>AsynTask</strong> within <strong>Service</strong> </li>
+          <li> Be cautions with Preferences or Account Managers </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Failsafe exceptions
+        </h3>
+        <section>
+          <pre>
+            // Bad practice
+            try{
+              // do something risky
+            } catch (NarrowException1 e){
+
+            } catch (NarrowException2 e){
+
+            }
+          </pre>
+        </section>
+        <section>
+          <pre>
+            // Good practice
+            try{
+              // do something risky
+            } catch (NarrowException1 e){
+
+            } catch (NarrowException2 e){
+
+            } catch (Exception e){
+
+            }
+          </pre>
+        </section>
+      </article>
+
+      <article>
+        <h3>
+          Remote error logging
+        </h3>
+        <section>
+          <pre>
+            try{
+              // do something risky
+            } catch (NarrowException1 e){
+
+            } catch (NarrowException2 e){
+
+            } catch (Exception e){
+              // call error API
+              // for remote logging
+              // on server
+              error( e.getMessage() );
+            }
+          </pre>
+        </section>
+      </article>
+
+      <article>
+        <h1>
+          Offline capabilities
+        </h1>
+        <img src="images/offline-capability.png" style="width: 320px; height: 480px; float: right; position: absolute; right: 40px; top: 110px;"/>
+      </article>
+
+      <article>
+        <h1>
+          Performance & Security
+        </h1>
+        <ul>
+          <li> Use Logging cautiously </li>
+          <li> Log.d or Log.v for sensitive info </li>
+          <li> Let the runtime kill the Service </li>
+          <li> Avoid creating objects </li>
+          <li> Use cloud to device messaging </li>
+          <li> LBS update frequency should be 5min </li>
+          <li> LBS update distance should be 1000m </li>
+        </ul>
+      </article>
+
+      <!-- <article>
+        <h1>
+          Best practices
+        </h1>
+        <ul>
+          <li>  </li>
+        </ul>
+      </article> -->
+
+      <article>
+        <h1>
+          Minimum viable product
+        </h1>
+        <ul>
+          <li> Google Analytics </li>
+          <li> Admob integration </li>
+          <li> ACRA integration </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Google Analytics integration
+        </h3>
+        <section>
+          <pre>
+            // Start tracking
+            tracker.start("UA-MY_CODE-XX", this);
+
+            // Register an activity view.
+            tracker.trackPageView("/map_activity");
+
+            // send views to server
+            tracker.dispatch();
+          </pre>
+        </section>
+      </article>
+
+       <article>
+        <h3>
+          Google Admob integration
+        </h3>
+        <section>
+          <pre>
+            // Create adview
+            AdView adView = new AdView(this, AD_TYPE, 
+            MY_BANNER_UNIT_ID);
+
+            // Create an ad request
+            AdRequest request = new AdRequest();
+
+            // Load ad in the UI.
+            adView.loadAd(request);
+          </pre>
+        </section>
+      </article>
+
+      <article>
+        <h3>
+          ACRA integration
+        </h3>
+        <section>
+          <pre>
+            // Associate the form
+            @ReportsCrashes(formKey = 
+            "tWTBQaGdDI4V1YDgzWHVqQWc6MQc2ZVZRb")
+
+            // Initialize ACRA
+            ACRA.init( this );
+          </pre>
+        </section>
+      </article>
+
+      <article>
+        <h1>
+          ACRA usage modes
+        </h1>
+        <ul>
+          <li> Silent (default) </li>
+          <li> Custom server script </li>
+          <li> Email </li>
+          <li> Almost anywhere, by implementing a simple interface </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          ACRA report desitnations
+        </h1>
+        <ul>
+          <li> GoogleDocs Form (default) </li>
+          <li> Toast </li>
+          <li> Notification </li>
+          <li> Dialog </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Post development
+        </h1>
+        <ul>
+          <li> Testing over production build </li>
+          <li> Three things to remember </li>
+          <li> Publishing the app </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Testing over production build
+        </h1>
+        <ul>
+          <li> Atleast last 5 version should be considered </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Three things to remember ALWAYS!
+        </h1>
+        <ul>
+          <li> Signing key </li>
+          <li> Package name </li>
+          <li> Version name / number </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Publishing on Google Play
+        </h1>
+        <ul>
+          <li> Targets 1906+ device models </li>
+          <li> <a class="no-underline" href="http://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&answer=138294&topic=2365624&ctx=topic" target="_blank">Indian developers can now sale apps</a> </li>
+          <li> Keep description brief and concise </li>
+          <li> Attractive banner (1024x500) </li>
+          <li> Screen shots (320x480,..) </li>
+          <li> App icons (512, 96, 72, 48, 36) </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Post deployment
+        </h1>
+        <ul>
+          <li> Collecting feedback </li>
+          <li> App updating interval  </li>
+          <li> App stores to publish the app on </li>
+          <li> Leverage social </li>
+        </ul>
+      </article>
+
+       <article>
+        <h1>
+          Collecting feedback
+        </h1>
+        <ul>
+          <li> <a class="no-underline" href="http://www.google.com/google-d-s/forms/" target="_blank">Google Forms</a> </li>
+          <li> Custom application rating activity </li>
+          <li> <a class="no-underline" href="http://www.surveymonkey.com/" target="_blank">SurveyMonkey.com</a> </li>
+          <li> <a class="no-underline" href="http://polldaddy.com/" target="_blank">PollDaddy</a> </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Application updates
+        </h1>
+        <ul>
+          <li>Right away for critical crashes</li>
+          <li>UI issues can be delayed</li>
+          <li>30-40 days is ideal</li>
+          <li>Too frequent updates irks user</li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Third party App Stores
+        </h1>
+        <ul>
+          <li> <a class="no-underline" href="http://apps.opera.com/en_in/" target="_blank">Opera Mobile Store</a> </li>
+          <li> <a class="no-underline" href="http://www.getjar.com/" target="_blank">GetJar</a> </li>
+          <li> 
+            <a class="no-underline" href="https://bdsc.webapps.blackberry.com/android/bpaa/" target="_blank">Blackberry runtime for Android</a> 
+          </li>
+          <li> <a class="no-underline" href="http://openappmkt.com/" target="_blank">OpenAppMkt</a> </li>
+          <li> <a class="no-underline" href="http://slideme.org/" target="_blank">SlideME</a> </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Leverage social
+        </h1>
+        <ul>
+          <li> Make heavy usage of social network </li>
+          <li> Respond to users </li>
+          <li> Get feedback </li>
+          <li> Promote application and grow your community </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          Some numbers
+        </h1>
+        <ul>
+          <li> Every time a new app is downloaded, the usage of all other apps on the device, decreases by 19%. </li>
+          <li> On an average a user has 41 apps installed on his device </li>
+          <li> 63% of time is spent with social apps. #AppsWorld </li>
+        </ul>
+      </article>
+
+      <article>
+        <h1>
+          1.3mn activations daily
+        </h1>
+        <img src="images/andy-tweet.png"/>
+      </article>
+
+      <article>
+        <h1>
+          Questions ?
+        </h1>
+        <img src="images/questions.png" style="float: right; position: absolute; top: 200px; left: 500px; width: 300px; height: 350px;"/>
+      </article>
+
+    </section>
+  </body>
+</html>
