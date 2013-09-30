@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Innovation on the<br>web and mobile',
+    title: 'Innovation on the web<br>',
     subtitle: 'Whats in the future!',
     //eventInfo: {
     //  title: 'Google I/O',
@@ -24,7 +24,7 @@ var SLIDE_CONFIG = {
   presenters: [{
     name: 'Jaydeep Wagh',
     company: 'Software Engineer<br>Changer Technologies',
-    gplus: 'http://plus.google.com/1234567890',
+    gplus: 'http://plus.google.com/108028229758280917085',
     twitter: '@jaydeep_w',
     www: 'http://www.The4thDimension.net',
     github: 'http://github.com/jaydeepw'
