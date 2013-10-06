@@ -21,6 +21,9 @@ URL: https://code.google.com/p/io-2012-slides
   <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+  <script data-main="js/slides" src="js/local-storage.js"></script>
+  <script data-main="js/slides" src="js/session-storage.js"></script>
+  <script type="text/javascript" src="js/canvas-animation.js"></script>
 </head>
 <body style="opacity: 0">
 
@@ -230,21 +233,213 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide>
+    <hgroup></hgroup>
+    <aside class="gdbar"><img src="images/html5-offline.png"></aside>
+    <article class="flexbox vcenter auto-fadein">
+      <h2>Offline Storage</h2>
+    </article>
+  </slide>
+
+  <slide>
+    <h2> Local Storage </h2>
+    <article class="flexbox vcenter auto-fadein">
+       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+      <table>
+        <tr>
+          <td>Status</td>
+          <td><div id="status">No key-value pair written yet</div></td>
+        </tr>
+        <tr>
+          <td>Enter Key</td>
+          <td><input type="text" id="key"></input></td>
+        </tr>
+        <tr>
+          <td>Enter Value</td>
+          <td><input type="text" id="value"></input></td>
+        </tr>
+        <tr>
+          <td><button id="read" onClick="updateLocalStorageStatus('Read');">Read</button></td>
+          <td><button id="write" onClick="updateLocalStorageStatus('Write');">Write</button></td>
+        </tr>
+      </table>
+    </div>
+    </article>
+  </slide>
+
+  <slide>
+    <h2> Session Storage </h2>
+    <article class="flexbox vcenter auto-fadein">
+       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+      <table>
+        <tr>
+          <td>Status</td>
+          <td><div id="status1">No key-value pair written yet</div></td>
+        </tr>
+        <tr>
+          <td>Enter Key</td>
+          <td><input type="text" id="key1"></input></td>
+        </tr>
+        <tr>
+          <td>Enter Value</td>
+          <td><input type="text" id="value1"></input></td>
+        </tr>
+        <tr>
+          <td><button id="read1" onClick="updateSessionStorageStatus('Read');">Read</button></td>
+          <td><button id="write1" onClick="updateSessionStorageStatus('Write');">Write</button></td>
+        </tr>
+      </table>
+    </div>
+    </article>
+  </slide>
+
+  <slide>
     <hgroup>
-      <h2>New APIs</h2>
+      <h2>Other Alternatives</h2>
+    </hgroup>
+    <article>
+      <br/><br/><br/>
+      <ul>
+        <li> <h2>Application Cache</h2> </li>
+        <li> <h2>File API</h2> </li>
+        <li> <h2>IndexedDB</h2> </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup></hgroup>
+    <aside class="gdbar"><img src="images/html5-device-access.png"></aside>
+    <article class="flexbox vcenter auto-fadein">
+      <h2>Device Access</h2>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2></h2>
+    </hgroup>
+    <article>
+    <p>Device APIs WG: <a href="http://www.w3.org/2009/dap/">www.w3.org/2009/dap/</a></p>
+    <ul>
+      <li> <a href="http://html5demos.com/geo">Geolocation API</a> </li>
+      <li>Device Orientation API ( accelerometer )</li>
+      <li>WebGL ( GPU )</li>
+      <li>HTML5 Filesystem API ( sandboxed filesystem )</li>
+      <li><code>navigator.onLine</code> / <code>navigator.connection</code> <a href="http://html5-demos.appspot.com/static/navigator.onLine.html">( network connectivity ) </a></li>
+      <li>Battery API</li>
+      <li>Gamepad API</li>
+      <li><a href="http://www.html5rocks.com/en/tutorials/webgl/jsartoolkit_webrtc/AR_mediaStream.html">WebRTC</a> ( voice &amp; video input ) / Web Audio API ( core audio )</li>
+    </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup></hgroup>
+    <aside class="gdbar"><img src="images/html5-connectivity.png"></aside>
+    <article class="flexbox vcenter auto-fadein">
+      <h2>Connectivity</h2>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Connectivity</h2>
     </hgroup>
     <article>
       <br/><br/>
       <ul>
-        <li> <h2>Offline Web Apps</h2> </li>
-        <li> <h2>getUserMedia / WebRTC</h2> </li>
-        <li> <h2>WebSockets</h2> </li>
-        <li> <h2>Geolocation</h2> </li>
-        <li> <h2>Canvas</h2> </li>
-        <li> <h2>File API</h2> </li>
+        <li> <h2><a href="http://www.websocket.org/echo.html">WebSockets</a></h2> </li>
+        <li> <h2>Server Sent Events</h2> </li>
       </ul>
-      <span style="position: absolute; left: 620px; top: 130px;"><img src="images/js-logo.jpg" style="width: 280px;"></span>
     </article>
+  </slide>
+
+  <slide>
+    <hgroup></hgroup>
+    <aside class="gdbar"><img src="images/html5-graphics.png"></aside>
+    <article class="flexbox vcenter auto-fadein">
+      <h2>Graphics</h2>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Graphics</h2>
+    </hgroup>
+    <article>
+      <br/><br/>
+      <ul>
+        <li> <h2>Canvas</h2> </li>
+        <li> <h2>WebGL</h2> </li>
+        <li> <h2>SVG</h2> </li>
+        <li> <h2><a href="http://codepen.io/juliangarnier/details/hzDAF">CSS 3D</a></h2> </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <h2> Canvas </h2>
+    <article class="flexbox vcenter auto-fadein">
+         <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+       <canvas id="canvas" width="290px" height="240px" style="border:1px solid black"></canvas>
+        <div style=" margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
+      <div style="margin: 0px auto 0px auto; width: 120px;">
+        <input type="button" onclick="startGame();" value="Start Animation" style="background: #667FCF; -webkit-border-radius: 3px; border-radius: 3px; color:#FFF;">
+        <br/>
+        <a href="https://chrome.google.com/webstore/detail/habhabojllgbbnkljehenoifphabnfdn" target="_blank">
+          1942 Tanks
+        </a>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup></hgroup>
+    <aside class="gdbar"><img src="images/html5-performance.png"></aside>
+    <article class="flexbox vcenter auto-fadein">
+      <h2>Performance</h2>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Performance</h2>
+    </hgroup>
+    <article>
+      <br/><br/>
+      <ul>
+        <li> <h2><a href="http://jsfiddle.net/paul/rjbGw/3/">Request Animation Frame</a></h2> </li>
+        <li> <h2>Web Workers</h2> </li>
+        <li> <h2>XMLHttpRequest 2</h2> </li>
+        <li> <h2>Navigation Timing</h2> </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide id="wrapup">
+    <hgroup>
+      <h2>The Web Can Do Amazing Things...</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Make Web apps Sexy!</li>
+        <li>Work offline</li>
+        <li>Dynamic CSS</li>
+        <li>Access Native Hardware</li>
+        <li>Stream Multimedia</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img class="swing" style="position: absolute; top: 40px; left: 150px;" src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Thank You!&gt;</h2>
+      <p>Feel free to contact me!</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
   </slide>
 
   <slide>
@@ -570,17 +765,6 @@ function helloWorld(world) {
     <article>
       <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
     </article>
-  </slide>
-
-  <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <h2>&lt;Thank You!&gt;</h2>
-      <p>Feel free to contact me!</p>
-    </article>
-    <p class="auto-fadein" data-config-contact>
-      <!-- populated from slide_config.json -->
-    </p>
   </slide>
 
   <slide class="logoslide dark nobackground">
