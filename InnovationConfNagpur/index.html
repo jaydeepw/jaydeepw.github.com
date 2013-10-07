@@ -243,27 +243,60 @@ URL: https://code.google.com/p/io-2012-slides
   <slide>
     <h2> Local Storage </h2>
     <article class="flexbox vcenter auto-fadein">
-       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px; margin: 15px auto 0px auto;">
-      <table>
-        <tr>
-          <td>Status</td>
-          <td><div id="status">No key-value pair written yet</div></td>
-        </tr>
-        <tr>
-          <td>Enter Key</td>
-          <td><input type="text" id="key"></input></td>
-        </tr>
-        <tr>
-          <td>Enter Value</td>
-          <td><input type="text" id="value"></input></td>
-        </tr>
-        <tr>
-          <td><button id="read" onClick="updateLocalStorageStatus('Read');">Read</button></td>
-          <td><button id="write" onClick="updateLocalStorageStatus('Write');">Write</button></td>
-        </tr>
-      </table>
+       <div style=" text-align:left; margin:15px; line-height: 26px; width:290px;">
+        <table>
+          <tr>
+            <td>Status</td>
+            <td><div id="status">No key-value pair written yet</div></td>
+          </tr>
+          <tr>
+            <td>Enter Key</td>
+            <td><input type="text" id="key"></input></td>
+          </tr>
+          <tr>
+            <td>Enter Value</td>
+            <td><input type="text" id="value"></input></td>
+          </tr>
+          <tr>
+            <td><button id="read" onClick="updateLocalStorageStatus('Read');">Read</button></td>
+            <td><button id="write" onClick="updateLocalStorageStatus('Write');">Write</button></td>
+          </tr>
+        </table>
     </div>
     </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>window.localStorage</h2>
+    </hgroup>
+    <article>
+      <br/><br/><br/>
+      <ul>
+        <li> Key / value pairs - hash table </li>
+        <li> Persistent on page reloads </li>
+        <li> Avoids HTTP overhead of cookies </li>
+        <li> Great for storing user preferences </li>
+        <li> and more... </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>How does this work!</h2>
+    </hgroup>
+    <article>
+      <div>
+        <pre class="prettyprint" data-lang="javascript">
+          localStorage.setItem('someKey', someValue);
+          localStorage.getItem('someKey'); // value
+
+          // Can also access as a property, but not recommended.
+          localStorage.someKey = someValue;
+        </pre>
+      </div>
+    </article >
   </slide>
 
   <slide>
@@ -289,6 +322,22 @@ URL: https://code.google.com/p/io-2012-slides
         </tr>
       </table>
     </div>
+    </article>
+  </slide>
+
+   <slide>
+    <hgroup>
+      <h2>window.sessionStorage</h2>
+    </hgroup>
+    <article>
+      <br/><br/><br/>
+      Same as localStorage but...
+      <ul>
+        <li> Lasts as long as browser is open </li>
+        <li> Opening page in new window or tab starts new session </li>
+        <li> Great for sensitive data (e.g. banking sessions) </li>
+        <li> and more... </li>
+      </ul>
     </article>
   </slide>
 
@@ -506,6 +555,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>Access Native Hardware</li>
         <li>Stream Multimedia</li>
       </ul>
+      <span style="position: absolute; left: 630px; top: 140px;"><img src="images/iron-man.jpg" style="width: 300px;"></span>
     </article>
   </slide>
 
@@ -517,7 +567,10 @@ URL: https://code.google.com/p/io-2012-slides
       <p></p>
       <ul>
         <li><a href="www.html5rocks.com/">HTML5Rocks</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/">Mozilla Dev. Network</a></li>
         <li><a href="www.html5test.com/">HTML5test</a></li>
+        <li><a href="http://caniuse.com/">CanIUse.com</a></li>
+        <li><a href="http://docs.webplatform.org/wiki/Main_Page">Web Platform Docs</a></li>
       </ul>
     </article>
   </slide>
