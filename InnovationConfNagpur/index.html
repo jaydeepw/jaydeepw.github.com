@@ -226,6 +226,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li> <h2>box-shadow</h2> </li>
         <li> <h2>text-shadow</h2> </li>
         <li> <h2>transition</h2> </li>
+        <li> <h2>filters</h2> </li>
         <li> <h2>and more...</h2> </li>
       </ul>
       <span style="position: absolute; left: 630px; top: 240px;"><img style="border-radius: 10px;" src="images/vendor-prefixes.jpg" style="width: 300px;"></span>
@@ -324,7 +325,7 @@ URL: https://code.google.com/p/io-2012-slides
           localStorage.setItem('someKey', someValue);
           localStorage.getItem('someKey'); // value
 
-          // Can also access as a property, but not recommended.
+          // Can also access as a property.
           localStorage.someKey = someValue;
         </pre>
       </div>
@@ -443,6 +444,7 @@ URL: https://code.google.com/p/io-2012-slides
       <li><code>navigator.onLine</code> / <code>navigator.connection</code> <a href="http://html5-demos.appspot.com/static/navigator.onLine.html">( network connectivity ) </a></li>
       <li>Battery API</li>
       <li>Gamepad API</li>
+      <li>Vibration API</li>
       <li><a href="http://www.html5rocks.com/en/tutorials/webgl/jsartoolkit_webrtc/AR_mediaStream.html">WebRTC</a> ( voice &amp; video input ) / Web Audio API ( core audio )</li>
     </ul>
     </article>
@@ -501,7 +503,7 @@ URL: https://code.google.com/p/io-2012-slides
               <pre class="prettyprint" data-lang="html">
                 &lt;audio width="320" height="240" controls="controls"&gt;<br/>
                   &nbsp; &lt;source src="audio/movie.mp4" type="audio/mp4"/&gt;<br/>
-                  &nbsp; &lt;source src="audio/meovie.ogg" type="audio/ogg" /&gt;<br/>
+                  &nbsp; &lt;source src="audio/movie.ogg" type="audio/ogg" /&gt;<br/>
                   &nbsp; Your browser does not support the audio tag.<br/>
                 &lt;/audio&gt;
               </pre>
@@ -640,9 +642,9 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
       <p></p>
       <ul>
-        <li><a href="www.html5rocks.com/">HTML5Rocks</a></li>
+        <li><a href="http://www.html5rocks.com/">HTML5Rocks</a></li>
         <li><a href="https://developer.mozilla.org/en-US/">Mozilla Dev. Network</a></li>
-        <li><a href="www.html5test.com/">HTML5test</a></li>
+        <li><a href="http://www.html5test.com/">HTML5test</a></li>
         <li><a href="http://caniuse.com/">CanIUse.com</a></li>
         <li><a href="http://docs.webplatform.org/wiki/Main_Page">Web Platform Docs</a></li>
       </ul>
@@ -650,7 +652,9 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img class="swing" style="position: absolute; top: 40px; left: 150px;" src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar right">
+      <img class="swing" style="position: absolute; top: 40px; left: 150px;" src="images/google_developers_icon_128.png">
+    </aside>
     <article class="flexbox vleft auto-fadein">
       <h2>&lt;Thank You!&gt;</h2>
       <p>Feel free to contact me!</p>
