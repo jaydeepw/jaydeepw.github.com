@@ -228,7 +228,23 @@ URL: https://code.google.com/p/io-2012-slides
         <li> <h2>transition</h2> </li>
         <li> <h2>and more...</h2> </li>
       </ul>
-      <span style="position: absolute; left: 630px; top: 140px;"><img src="images/vendor-prefixes.jpg" style="width: 300px;"></span>
+      <span style="position: absolute; left: 630px; top: 240px;"><img style="border-radius: 10px;" src="images/vendor-prefixes.jpg" style="width: 300px;"></span>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Media Queries</h2>
+    </hgroup>
+    <article class= "flexbox vcenter">
+      <section>
+        <img src="images/media-queries.jpg"/>
+        <div class="flexbox vcenter">
+          <a href="http://designmodo.com/responsive-design-examples/" target="_blank">
+            Goto Demo
+          </a>  
+        </div>
+      </section>
     </article>
   </slide>
 
@@ -239,6 +255,22 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Offline Storage</h2>
     </article>
   </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Before HTML5</h2>
+    </hgroup>
+    <article>
+      <br/><br/><br/>
+      <ul>
+        <li> <h2>Cookies</h2> </li>
+        <li> <h2>Flash Storage</h2> </li>
+        <li> <h2>Internet Explorer UserData</h2> </li>
+        <li> <h2>Google Gears</h2> </li>
+        <li> <h2>Dojo Storage</h2> </li>
+      </ul>
+    </article>
+  </slide>  
 
   <slide>
     <h2> Local Storage </h2>
@@ -274,10 +306,10 @@ URL: https://code.google.com/p/io-2012-slides
       <br/><br/><br/>
       <ul>
         <li> Key / value pairs - hash table </li>
-        <li> Persistent on page reloads </li>
+        <li> Default 5MB storage prompter for more </li>
+        <li> Persistent on page reloads and browser shutdown </li>
         <li> Avoids HTTP overhead of cookies </li>
         <li> Great for storing user preferences </li>
-        <li> and more... </li>
       </ul>
     </article>
   </slide>
@@ -336,7 +368,6 @@ URL: https://code.google.com/p/io-2012-slides
         <li> Lasts as long as browser is open </li>
         <li> Opening page in new window or tab starts new session </li>
         <li> Great for sensitive data (e.g. banking sessions) </li>
-        <li> and more... </li>
       </ul>
     </article>
   </slide>
@@ -351,6 +382,41 @@ URL: https://code.google.com/p/io-2012-slides
         <li> <h2>Application Cache</h2> </li>
         <li> <h2>File API</h2> </li>
         <li> <h2>IndexedDB</h2> </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Application Cache</h2>
+    </hgroup>
+    <article>
+      <br/><br/><br/>
+      <ul>
+        <li> Caches entire web app locally! </li>
+        <li>
+          Why?
+          <ul>
+            <li>HTML, CSS, and JS stay fairly consistent</li>
+            <li>Native browser caching is unreliable</li>
+            <li>Caching resources creates speedier apps!</li>
+          </ul>
+        </li>
+      </ul>
+      Used by iPhone & Android GMail app
+    </article>
+  </slide>
+
+<slide>
+    <hgroup>
+      <h2>window.indexedDB</h2>
+    </hgroup>
+    <article>
+      <br/><br/><br/>
+      <ul>
+        <li> Best of localStorage/sessionStorage and Web SQL DB: </li>
+        <li> Object based data store </li>
+        <li> Asynchronous & Synchronous API for browser and web workers</li>
       </ul>
     </article>
   </slide>
