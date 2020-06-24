@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>1942 Tanks Help</title>
+    <link rel="stylesheet" href="../js/jquery-mobile/jquery.mobile-1.0a4.1.min.css" />
+	<script type="text/javascript" src="../js/jquery-mobile/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-mobile/jquery.mobile-1.0a4.1.min.js"></script>
+	<script type="text/javascript" src="../js/SoundHandler.js"></script> 
+
+</head>
+<body onLoad="playGameIntroMusicLoop();">
+<div data-role="page" id="bar">
+         <!--Intro music-->
+        <audio id="IntroMusicLoop" autobuffer loop>
+          <source src="../sounds/GameIntro.mp3">
+            Audio tag not supported
+          </sound>
+        </audio>
+        
+</br></br></br></br></br>
+	<div data-role="header">
+		<h1>Help</h1>
+	</div>
+
+    </br></br></br>
+        <div data-role="collapsible" data-collapsed="true">
+        <h3>What if the Game doest run at all</h3>
+        <p>JavaScript might have been disabled. Goto wrench icon in the top right corner, click Options and Enable JavaScript.</p>
+        </div>
+            
+        <div data-role="collapsible" data-collapsed="true">
+        <h3>What if the Game Runs Slow</h3>
+        <p>Sorry to say, but either you have a pretty old computer or the Google Chrome Browser version is old. Click the wrench icon in the top right corner, then goto Tool->About Google Chrome. It will soon start upgrading to latest version</p>
+        </div>
+        
+        <div data-role="collapsible" data-collapsed="true">
+        <h3>What if the Game freezes</h3>
+        <p>The Google Chrome Browser version is pretty old. Click the wrench icon in the top right corner, then goto Tool->About Google Chrome. It will soon upgrading to latest version</p>
+        </div>
+        
+        <div data-role="collapsible" data-collapsed="true">
+        <h3>Game Sound is not audible</h3>
+        <p>Check if your system has sound enabled and appropriate drivers are been installed on the system</p>
+        </div>               
+    </br></br></br>
+
+	<div data-role="footer" align="center">
+    &copy; 2011 The4thDimension.net
+	</div>
+</div>
+</body>
+
+</html>

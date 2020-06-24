@@ -1,0 +1,14 @@
+{
+  "name": "1942 TANKS",
+  "description": "Once upon a time during the World War II...!",
+  "version": "11.6.28.1",
+  "app": {
+    "launch": {
+      "local_path": "Main.html"
+    }
+  },
+ "icons": {
+    "16": "icon_16.png",
+    "128": "icon_128.png"
+  }
+}

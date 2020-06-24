@@ -1,0 +1,98 @@
+<html>
+<head>
+
+	<link type="text/css" href="../css/AllCss.css" rel="stylesheet">        
+	<script type="text/javascript" src="../js/KeyStrokes.js"></script>
+	<script type="text/javascript" src="../js/GameScript.js"></script> 
+	<script type="text/javascript" src="../js/FireShell.js"></script>
+<!--	<script type="text/javascript" src="../js/RightClickInhibit.js"></script>-->
+	<script type="text/javascript" src="../js/Collision.js"></script>
+	<script type="text/javascript" src="../js/SoundHandler.js"></script>
+	<script type="text/javascript" src="../js/FireShellBot.js"></script>    
+    
+    <!--Bot Tanks Scripts-->
+	<script type="text/javascript" src="../js/BotTanksAI.js"></script>
+    
+    <!--External Libraries & related-->    
+    <script type="text/javascript" src="../js/jQuery152.js"></script>
+    <script type="text/javascript" src="../js/UIEffectsHandler.js"></script>
+    
+    <script type="text/javascript">
+		
+		<!--Google Analytics Measurement-->
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-20048151-5']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+    	var isGameControlsHidden=true;
+	</script>
+    
+	<title>1942 TANKS</title>
+</head>
+<body onLoad="doTimer(); getKeyStrokes(); showHideLeftPane(); playGameBGMusicLoop();" bgcolor="#ececec">
+	<TABLE border="0" cellspacing="10px">
+	 <TR valign="top">
+	  <TD width="30%">
+	  </TD>
+	  
+	  <TD width="40%">
+                <Table border="0">
+	       <Tr valign="top">
+		     <Td>
+             <br>
+			    <canvas id="myCanvas" width="700" height="500"></canvas>
+		    </Td>
+		  </Tr>
+          <Tr valign="top">
+            <Td>
+            	<iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fhabhabojllgbbnkljehenoifphabnfdn&amp;send=true&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+            </Td>
+          </Tr>
+	    </Table>
+	  </TD width="33%">
+      
+	  <TD width="30%" height="600">
+        <Table border="0">
+	       <Tr valign="top">
+		     <Td>
+             
+                 <input type="text" id="txt">
+                 <!--Game BackGround Music-->
+                </audio>                
+                <audio id="BackgroundMusicLoop" autobuffer loop>
+                  <source src="../sounds/bgmusic.mp3">
+                    Audio tag not supported
+                  </sound>
+                </audio> 
+                       
+                <canvas id="debuggingCanvas" width="300" height="500"></canvas>
+                
+                 <!--SHell Fire music-->
+                <audio id="ShellFire" autobuffer>
+                  <source src="../sounds/artillery_reports.mp3" type="audio/mpeg" />
+                    Audio tag not supported
+                  </sound>
+                </audio>
+                
+                 <!--explosion-->
+                <audio id="ShellNObjectCollision" autobuffer>
+                  <source src="../sounds/explosion.mp3" type="audio/mpeg" />
+                    Audio tag not supported
+                  </sound>
+                </audio>
+                
+		    </Td>
+		  </Tr>
+	    </Table>
+	  </TD>
+	 </TR>
+	</TABLE>
+</body>
+</html>
+
